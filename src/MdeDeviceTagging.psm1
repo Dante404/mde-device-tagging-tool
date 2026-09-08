@@ -139,7 +139,7 @@ function Get-MdeAccessToken {
     throw 'The device code expired before authentication completed.'
 }
 
-function Get-MdeRetryDelaySeconds {
+function Get-MdeRetryDelay {
     [CmdletBinding()]
     [OutputType([double])]
     param(
@@ -249,7 +249,7 @@ function Invoke-MdeApiRequest {
                 throw
             }
 
-            $delay = Get-MdeRetryDelaySeconds `
+            $delay = Get-MdeRetryDelay `
                 -Response $response `
                 -Attempt $attempt `
                 -InitialRetrySeconds $InitialRetrySeconds
@@ -436,7 +436,7 @@ function Resolve-MdeMachineTarget {
     }
 }
 
-function New-MdeTagPlan {
+function Get-MdeTagPlan {
     <#
     .SYNOPSIS
     Creates an idempotent tag-change plan without making API changes.
@@ -570,7 +570,7 @@ function Invoke-MdeDeviceTagging {
             -PageSize $PageSize `
             -MaxRetryCount $MaxRetryCount)
 
-    $plan = @(New-MdeTagPlan `
+    $plan = @(Get-MdeTagPlan `
             -TargetName $TargetName `
             -Machines $machines `
             -Tag $Tag `
@@ -641,6 +641,6 @@ Export-ModuleMember -Function @(
     'Invoke-MdeApiRequest',
     'Get-MdeMachineInventory',
     'Resolve-MdeMachineTarget',
-    'New-MdeTagPlan',
+    'Get-MdeTagPlan',
     'Invoke-MdeDeviceTagging'
 )

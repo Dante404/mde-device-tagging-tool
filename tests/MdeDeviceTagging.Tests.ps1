@@ -125,7 +125,7 @@ Describe 'Resolve-MdeMachineTarget' {
     }
 }
 
-Describe 'New-MdeTagPlan' {
+Describe 'Get-MdeTagPlan' {
     BeforeAll {
         $machines = @(
             [pscustomobject]@{
@@ -144,7 +144,7 @@ Describe 'New-MdeTagPlan' {
     }
 
     It 'does not add an existing tag again' {
-        $plan = @(New-MdeTagPlan `
+        $plan = @(Get-MdeTagPlan `
                 -TargetName 'one.lab.example' `
                 -Machines $machines `
                 -Tag 'Pilot' `
@@ -154,7 +154,7 @@ Describe 'New-MdeTagPlan' {
     }
 
     It 'plans a missing tag addition' {
-        $plan = @(New-MdeTagPlan `
+        $plan = @(Get-MdeTagPlan `
                 -TargetName 'two.lab.example' `
                 -Machines $machines `
                 -Tag 'Pilot' `
@@ -164,7 +164,7 @@ Describe 'New-MdeTagPlan' {
     }
 
     It 'does not remove a tag that is already absent' {
-        $plan = @(New-MdeTagPlan `
+        $plan = @(Get-MdeTagPlan `
                 -TargetName 'two.lab.example' `
                 -Machines $machines `
                 -Tag 'Pilot' `

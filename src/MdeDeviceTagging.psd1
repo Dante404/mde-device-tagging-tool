@@ -13,7 +13,7 @@
         'Invoke-MdeApiRequest'
         'Get-MdeMachineInventory'
         'Resolve-MdeMachineTarget'
-        'New-MdeTagPlan'
+        'Get-MdeTagPlan'
         'Invoke-MdeDeviceTagging'
     )
     CmdletsToExport   = @()
