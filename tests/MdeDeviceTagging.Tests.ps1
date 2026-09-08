@@ -1,5 +1,10 @@
 #requires -Version 7.2
 
+BeforeDiscovery {
+    $modulePath = Join-Path $PSScriptRoot '../src/MdeDeviceTagging.psd1'
+    Import-Module $modulePath -Force
+}
+
 BeforeAll {
     $modulePath = Join-Path $PSScriptRoot '../src/MdeDeviceTagging.psd1'
     Import-Module $modulePath -Force
