@@ -1,0 +1,22 @@
+# Local output and logs
+results/
+*.log
+tagging-results-*.csv
+
+# Secrets and local configuration
+.env
+.env.*
+!.env.example
+*.token
+*.secret
+secrets/
+
+# Editors and operating systems
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# PowerShell test output
+TestResults/
+coverage.xml
