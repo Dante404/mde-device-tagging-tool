@@ -1,0 +1,4 @@
+"InputName","DeviceName","MachineId","LastSeen","CandidateCount","Action","Tag","Status","Detail"
+"win-client-001","win-client-001.lab.example","0000000000000000000000000000000000000001","2026-08-30T14:20:00Z","1","Add","Migration-Pilot","DryRun","No API write was made because DryRun defaults to true."
+"linux-server-002.lab.example","linux-server-002.lab.example","0000000000000000000000000000000000000002","2026-08-30T13:10:00Z","1","Add","Migration-Pilot","NoChange","The device already has this tag."
+"win-server-003","","","","0","Add","Migration-Pilot","NotFound","No accessible Defender machine matched the supplied name."

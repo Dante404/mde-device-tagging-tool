@@ -1,0 +1,5 @@
+# One short hostname or fully qualified domain name per line.
+# These names are synthetic and do not represent real systems.
+win-client-001
+linux-server-002.lab.example
+win-server-003
